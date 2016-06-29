@@ -19,8 +19,8 @@ y_abelha = (600*0.8)
 mov_x = 0
 mov_y = 0
 
-imgAbelhaDireita = pygame.image.load('abelha_bee_direita.png')
-imgAbelhaEsquerda = pygame.image.load('abelha_bee_esquerda.png')
+imgAbelhaDireita = pygame.image.load('../images/abelha_bee_direita.png')
+imgAbelhaEsquerda = pygame.image.load('../images/abelha_bee_esquerda.png')
 mov_imagem = imgAbelhaDireita
 morta = False
 
