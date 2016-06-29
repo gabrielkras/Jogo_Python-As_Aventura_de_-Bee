@@ -34,12 +34,13 @@ def main():
 
 # Definindo os botoes nas variaveis globais
 def startMenu():
+	scenario = Scenario([200,200],"paisagem_fundo.jpg")
 	button_start = Button([400,300],"button_start_game_normal_01.png")
 	button_stats = Button([400,400],"button_stats_game_normal_01.png")
 	button_exit  = Button([400,500],"button_exit_game_normal_01.png")
 	logo = Logo([400,100],"logo_jogo.png")
 	while 1:
-		screen.fill(white)
+		screen.blit(scenario.image,scenario.rect)
         	screen.blit(button_start.image, button_start.rect)
 		screen.blit(button_stats.image, button_stats.rect)
         	screen.blit(button_exit.image, button_exit.rect)
