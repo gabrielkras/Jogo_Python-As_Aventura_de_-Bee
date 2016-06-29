@@ -24,9 +24,9 @@ class Button(pygame.sprite.Sprite):
 		self.rect.centery = position[1]
 		
 	
-#	def checkEvent(self):
-#		for event in pygame.mouse.get_pressed():
-#			if event[0] == TRUE:
-#				print("CLIQUEI COM O MOUSE")		
+	def checkEvent(self):
+		for event in pygame.event.get():
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				return True
 
 
