@@ -37,7 +37,7 @@ def startMenu():
 		screen.blit(button_stats.image, button_stats.rect)
         	screen.blit(button_exit.image, button_exit.rect)
 		pygame.display.flip()
-		button_start.checkEvent()
+#		button_start.checkEvent()
 #		if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 #			if bstart.collidepoint(pos):
 #				print("SHOW BOTAO START")
