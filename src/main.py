@@ -12,6 +12,7 @@ from objects.button import Button
 from objects.logo import Logo
 from objects.bee import Bee
 from objects.scenario import Scenario
+from objects.zangao import Zangao
 
 # Inicializando screen
 pygame.init()
@@ -56,11 +57,9 @@ def startMenu():  # Definindo os botoes nas variaveis globais
 # pygame.quit()
 # quit()
 
-
 def beeMove(mov_imagem, x_abelha, y_abelha, scenario):
     screen.blit(scenario.image, scenario.rect)
     screen.blit(mov_imagem, (x_abelha, y_abelha))
-
 
 def game():
     x_abelha = (800*0.45)
