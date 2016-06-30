@@ -65,18 +65,22 @@ def beeMove(mov_imagem, x_abelha, y_abelha, scenario):
 
 
 def game():
-    x_abelha = (800*0.45)
-    y_abelha = (600*0.8)
-    x_zangao = (800*0.25)
-    y_zangao = (600*0.3)
+    x_abelha = (400)
+    y_abelha = (400)
+    x_zangao = (0)
+    y_zangao = (0)
     mov_x = 0
     mov_y = 0
     _abelha = (800*0.45)
     _abelha = (600*0.8)
     bee_right = Bee([64, 54], "abelha_bee_direita.png")
+    bee_right.rect.center = (x_abelha,y_abelha)
     bee_left = Bee([64, 54], "abelha_bee_esquerda.png")
+    bee_left.rect.center = (x_abelha,y_abelha)
     zangao_left = Zangao([80, 84], "zangao_esquerda.png")
+    zangao_left.rect.center = (x_zangao,y_zangao)
     zangao_right = Zangao([80, 84], "zangao_direita.png")
+    zangao_right.rect.center = (x_zangao,y_zangao)
     mov_imagem = bee_right
     morta = False
     scenario = Scenario([200, 200], "paisagem_fundo.jpg")
@@ -115,7 +119,7 @@ def game():
 
         if bee_right.rect.colliderect(zangao_right.rect):
             morta = True
-        if bee_left.rect.colliderect(zangao_right.rect):
+        if bee_left.rect.colliderect(zangao_left.rect):
             morta = True
 
         if (x_abelha + mov_x + 64) > 800 or (x_abelha + mov_x) < 0:
@@ -128,10 +132,10 @@ def game():
         else:
             y_abelha += mov_y
 
-        bee_right.changeRect(x_abelha, y_abelha)
-        bee_left.changeRect(x_abelha, y_abelha)
-        zangao_right.changeRect(x_zangao, y_zangao)
-        zangao_left.changeRect(x_zangao, y_zangao)
+        bee_right.rect.center = (x_abelha,y_abelha)
+	bee_left.rect.center = (x_abelha,y_abelha)
+	zangao_right.rect.center = (x_zangao,y_zangao)
+        zangao_left.rect.center = (x_zangao,y_zangao)
         beeMove(mov_imagem, x_abelha, y_abelha, scenario)
         enemy(mov_zangao, x_zangao, y_zangao)
         pygame.display.update()
