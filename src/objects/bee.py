@@ -31,6 +31,6 @@ class Bee(pygame.sprite.Sprite):
     def decrementLife(self, quantity):
         life_points = life_points - quantity
 
-    def chanceRect(self, x, y):
+    def changeRect(self, x, y):
         self.rect.centerx = x
         self.rect.centery = y

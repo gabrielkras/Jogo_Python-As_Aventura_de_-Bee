@@ -128,10 +128,10 @@ def game():
         else:
             y_abelha += mov_y
 
-        bee_right.chanceRect(x_abelha, y_abelha)
-        bee_left.chanceRect(x_abelha, y_abelha)
-        zangao_right.chanceRect(x_zangao, y_zangao)
-        zangao_left.chanceRect(x_zangao, y_zangao)
+        bee_right.changeRect(x_abelha, y_abelha)
+        bee_left.changeRect(x_abelha, y_abelha)
+        zangao_right.changeRect(x_zangao, y_zangao)
+        zangao_left.changeRect(x_zangao, y_zangao)
         beeMove(mov_imagem, x_abelha, y_abelha, scenario)
         enemy(mov_zangao, x_zangao, y_zangao)
         pygame.display.update()
