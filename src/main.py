@@ -57,6 +57,8 @@ def startMenu():  # Definindo os botoes nas variaveis globais
 # menu = False
 # pygame.quit()
 # quit()
+def enemy(mov_imagem, x_zangao, y_zangao):
+    screen.blit(mov_imagem, (x_zangao, y_zangao))
 
 def beeMove(mov_imagem, x_abelha, y_abelha, scenario):
     screen.blit(scenario.image, scenario.rect)
@@ -65,16 +67,33 @@ def beeMove(mov_imagem, x_abelha, y_abelha, scenario):
 def game():
     x_abelha = (800*0.45)
     y_abelha = (600*0.8)
+    x_zangao = (800*0.25)
+    y_zangao = (600*0.3)
     mov_x = 0
     mov_y = 0
     _abelha = (800*0.45)
     _abelha = (600*0.8)
     bee_right = Bee([400, 200], "abelha_bee_direita.png").image
     bee_left = Bee([400, 200], "abelha_bee_esquerda.png").image
+    zangao_left = Zangao([800,200], "zangao_esquerda.png").image
+    zangao_right = Zangao([800,200], "zangao_direita.png").image
     mov_imagem = bee_right
     morta = False
     scenario = Scenario([200, 200], "paisagem_fundo.jpg")
     while not morta:
+	if mov_imagem == bee_right:
+            mov_zangao = zangao_left
+        if mov_imagem == bee_left:
+            mov_zangao = zangao_right
+	if x_zangao >= x_abelha:
+		x_zangao = x_zangao - 1
+	if y_zangao >= y_abelha:
+		y_zangao = y_zangao - 1
+	if x_zangao <= x_abelha:
+		x_zangao = x_zangao + 1
+	if y_zangao <= y_abelha:
+		y_zangao = y_zangao + 1
+	
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 morta = True
@@ -108,6 +127,7 @@ def game():
 
         # screen.fill(white)
         beeMove(mov_imagem, x_abelha, y_abelha, scenario)
+	enemy(mov_zangao, x_zangao, y_zangao)
         pygame.display.update()
         clock.tick(60)
 
