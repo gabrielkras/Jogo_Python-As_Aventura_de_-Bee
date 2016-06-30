@@ -10,9 +10,9 @@ import pygame
 from core import Core
 
 
-class Bee(pygame.sprite.Sprite):
-    life_points = 3
-    mana_points = 25
+class Ferrao(pygame.sprite.Sprite):
+    mana_cust = 5
+    hits = 10
 
     def __init__(self, position, buttonName):
         # Inicia os objetos
@@ -26,18 +26,9 @@ class Bee(pygame.sprite.Sprite):
         self.rect.centerx = position[0]
         self.rect.centery = position[1]
 
-    def incrementLife(self, quantity):
-        self.life_points = self.life_points + quantity
+    def defineCust(self, quantity):
+        self.mana_cust = quantity
 
-    def decrementLife(self, quantity):
-        self.life_points = self.life_points - quantity
+    def defineHits(self, quantity):
+        self.hits = quantity
 
-    def incrementMana(self, quantity):
-        self.mana_points = self.mana_points + quantity
-
-    def decrementMana(self, quantity):
-        self.mana_points = self.mana_points - quantity
-
-    def changeRect(self, x, y):
-        self.rect.centerx = x
-        self.rect.centery = y

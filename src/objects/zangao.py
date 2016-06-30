@@ -25,10 +25,10 @@ class Zangao(pygame.sprite.Sprite):
         self.rect.centery = position[1]
 
     def incrementLife(self, quantity):
-        life_points = life_points + quantity
+        self.life_points = self.life_points + quantity
 
     def decrementLife(self, quantity):
-        life_points = life_points - quantity
+        self.life_points = self.life_points - quantity
 
     def changeRect(self, x, y):
         self.rect.centerx = x
