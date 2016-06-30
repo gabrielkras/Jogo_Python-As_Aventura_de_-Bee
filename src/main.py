@@ -50,8 +50,9 @@ def startMenu():  # Definindo os botoes nas variaveis globais
     while aux:
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
-                aux = False
-                game()
+                if button_start.rect.collidepoint(pygame.mouse.get_pos()):
+                    aux = False
+                    game()
 # if button_exit.checkEvent() == True:
 # menu = False
 # pygame.quit()
@@ -95,12 +96,12 @@ def game():
                 if event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                     mov_y = 0
 
-        if (x_abelha + mov_x) > 800 or (x_abelha + mov_x) < 0:
+        if (x_abelha + mov_x + 64) > 800 or (x_abelha + mov_x) < 0:
             mov_x = 0
         else:
             x_abelha += mov_x
 
-        if (y_abelha + mov_y > 600) or (y_abelha + mov_y) < 0:
+        if (y_abelha + mov_y + 54) > 600 or (y_abelha + mov_y) < 0:
             mov_y = 0
         else:
             y_abelha += mov_y
