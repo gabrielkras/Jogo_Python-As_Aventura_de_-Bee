@@ -81,16 +81,14 @@ def game():
     morta = False
     scenario = Scenario([200, 200], "paisagem_fundo.jpg")
     while not morta:
-	if mov_imagem == bee_right:
-            mov_zangao = zangao_left
-        if mov_imagem == bee_left:
-            mov_zangao = zangao_right
 	if x_zangao >= x_abelha:
 		x_zangao = x_zangao - 1
+		mov_zangao = zangao_left
 	if y_zangao >= y_abelha:
 		y_zangao = y_zangao - 1
 	if x_zangao <= x_abelha:
 		x_zangao = x_zangao + 1
+		mov_zangao = zangao_right
 	if y_zangao <= y_abelha:
 		y_zangao = y_zangao + 1
 	
