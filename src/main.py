@@ -130,7 +130,7 @@ def game():
 
         bee_right.chanceRect(x_abelha, y_abelha)
         bee_left.chanceRect(x_abelha, y_abelha)
-        zangao_right.chanceRect(x_abelha, y_abelha)
+        zangao_right.chanceRect(x_zangao, y_zangao)
         zangao_left.chanceRect(x_zangao, y_zangao)
         beeMove(mov_imagem, x_abelha, y_abelha, scenario)
         enemy(mov_zangao, x_zangao, y_zangao)
